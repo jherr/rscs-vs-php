@@ -1,0 +1,19 @@
+<div class="font-bold">Name</div>
+<div class="font-bold">Type</div>
+<div class="font-bold">HP</div>
+<div class="font-bold">Attack</div>
+<div class="font-bold">Defense</div>
+<div class="font-bold">Sp. Attack</div>
+<div class="font-bold">Sp. Defense</div>
+<div class="font-bold">Speed</div>
+
+{% for row in pokemon %}
+<div class="font-bold">{{ row.name }}</div>
+<div>{{ row.type | join(sep=', ') }}</div>
+<div>{{ row.hp }}</div>
+<div>{{ row.attack }}</div>
+<div>{{ row.defense }}</div>
+<div>{{ row.special_attack }}</div>
+<div>{{ row.special_defense }}</div>
+<div>{{ row.speed }}</div>
+{% endfor %}
