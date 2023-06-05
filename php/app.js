@@ -37,6 +37,7 @@ $(document).ready(function () {
     // });
     $.get(`search-html.php?search=${encodeURIComponent(value)}`, (newTable) => {
       const tableElement = $("#table");
+      // Do not follow this example in production code, if the source of the data is not trusted.
       tableElement.html(newTable);
     });
   });
