@@ -45,7 +45,16 @@ cd php
 
 Serves on: `http://locahost:9000/`
 
-## Rust
+## Rust (Axum)
+
+```bash
+cd rust-axum
+cargo run -r
+```
+
+Serves on: `http://locahost:8001/`
+
+## Rust (Rocket)
 
 ```bash
 cd rust
