@@ -18,14 +18,14 @@ $filteredPokemon = array_slice(
 <div class="font-bold">Sp. Attack</div>
 <div class="font-bold">Sp. Defense</div>
 <div class="font-bold">Speed</div>
-<?php foreach ($filteredPokemon as $p) { ?>
-  <div class="font-bold"><?= $p['name'] ?></div>
-  <div><?= implode(', ', $p['type']) ?></div>
-  <div><?= $p['hp'] ?></div>
-  <div><?= $p['attack'] ?></div>
-  <div><?= $p['defense'] ?></div>
-  <div><?= $p['special_attack'] ?></div>
-  <div><?= $p['special_defense'] ?></div>
-  <div><?= $p['speed'] ?></div>
+<?php foreach ($pokemon as $row) { ?>
+  <div class="font-bold"><?= htmlspecialchars($row['name']) ?></div>
+  <div><?= htmlspecialchars(implode(', ', $row['type'])) ?></div>
+  <div><?= htmlspecialchars($row['hp']) ?></div>
+  <div><?= htmlspecialchars($row['attack']) ?></div>
+  <div><?= htmlspecialchars($row['defense']) ?></div>
+  <div><?= htmlspecialchars($row['special_attack']) ?></div>
+  <div><?= htmlspecialchars($row['special_defense']) ?></div>
+  <div><?= htmlspecialchars($row['speed']) ?></div>
 <?php } ?>
 
