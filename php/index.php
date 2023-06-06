@@ -24,14 +24,14 @@ $pokemon = array_slice(json_decode($jsonData, true), 0, 20);
         <div class="font-bold">Sp. Defense</div>
         <div class="font-bold">Speed</div>
         <?php foreach ($pokemon as $row) { ?>
-          <div class="font-bold"><?= $row['name'] ?></div>
-          <div><?= implode(', ', $row['type']) ?></div>
-          <div><?= $row['hp'] ?></div>
-          <div><?= $row['attack'] ?></div>
-          <div><?= $row['defense'] ?></div>
-          <div><?= $row['special_attack'] ?></div>
-          <div><?= $row['special_defense'] ?></div>
-          <div><?= $row['speed'] ?></div>
+          <div class="font-bold"><?= htmlspecialchars($row['name']) ?></div>
+          <div><?= htmlspecialchars(implode(', ', $row['type'])) ?></div>
+          <div><?= htmlspecialchars($row['hp']) ?></div>
+          <div><?= htmlspecialchars($row['attack']) ?></div>
+          <div><?= htmlspecialchars($row['defense']) ?></div>
+          <div><?= htmlspecialchars($row['special_attack']) ?></div>
+          <div><?= htmlspecialchars($row['special_defense']) ?></div>
+          <div><?= htmlspecialchars($row['speed']) ?></div>
         <?php } ?>
       </div>
    </main>

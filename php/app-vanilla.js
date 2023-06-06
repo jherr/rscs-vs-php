@@ -27,6 +27,7 @@ document.getElementById("search").addEventListener("keyup", function () {
   fetch(`search.php?search=${encodeURIComponent(value)}`)
     .then((response) => response.json())
     .then((pokemon) => {
+      const start = performance.now();
       while (tableElement.firstChild) {
         tableElement.removeChild(tableElement.firstChild);
       }
@@ -55,5 +56,6 @@ document.getElementById("search").addEventListener("keyup", function () {
           createTextNode(row.speed)
         );
       }
+      console.log(performance.now() - start);
     });
 });

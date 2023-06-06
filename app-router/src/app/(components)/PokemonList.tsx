@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 
 import { Pokemon } from "../types";
+import { flushSync } from "react-dom";
 
 function PokemonList({
   initialData,
@@ -20,7 +21,12 @@ function PokemonList({
         placeholder="Search"
         className="border border-gray-400 p-2 rounded-lg w-full mt-5 text-black"
         onChange={async (evt) => {
-          setPokemon(await pokemonSearch(evt.target.value));
+          const data = await pokemonSearch(evt.target.value);
+          const start = performance.now();
+          flushSync(() => {
+            setPokemon(data);
+          });
+          console.log(performance.now() - start);
         }}
       />
       <div
